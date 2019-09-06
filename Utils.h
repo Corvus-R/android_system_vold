@@ -24,6 +24,7 @@
 #include <cutils/multiuser.h>
 #include <selinux/selinux.h>
 
+#include <chrono>
 #include <vector>
 #include <string>
 
@@ -127,6 +128,8 @@ bool WaitForFile(const std::string& filename,
 
 /* Checks if Android is running in QEMU */
 bool IsRunningInEmulator();
+
+status_t WaitForFile(const char* filename, std::chrono::nanoseconds timeout);
 
 bool FsyncDirectory(const std::string& dirname);
 
